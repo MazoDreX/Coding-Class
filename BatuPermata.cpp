@@ -84,14 +84,17 @@ int main() {
         
 
     } else if (tipeBatu == 2) {
+        double kenaikanLabour;
+
         cout << "Tipe Batu: 2 (Kenaikan Harga 15%)" << endl;
         kenaikanHarga = hargaPokok * 0.15;
-        cout << "Kenaikan Harga (15%): " << fixed << setprecision(2) << kenaikanHarga << endl;
-        
-
-        double kenaikanLabour = hargaPokok * 0.03; // Kenaikan 3% karena labour
-        kenaikanHarga += kenaikanLabour;
         subTotal = hargaPokok + kenaikanHarga;
+        cout << "Kenaikan Harga (15%): " << fixed << setprecision(2) << kenaikanHarga << endl;
+        cout << "Harga saat ini adalah " << fixed << setprecision(2) << subTotal << endl;
+
+        kenaikanLabour = subTotal * 0.03; // Kenaikan 3% karena labour
+        kenaikanHarga += kenaikanLabour;
+        subTotal += kenaikanLabour;
         cout << "Kenaikan Harga Labour (3%): " << fixed << setprecision(2) << kenaikanLabour << endl;
         cout << "Harga batu saat ini: " << subTotal << endl;
 
